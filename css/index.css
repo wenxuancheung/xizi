@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* 防止点击闪烁 */
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    /* 缩放网页，文字大小不变 */
+    -webkit-text-size-adjust:none;
+}
+body{
+    font-size: 16px;
+}
+/*取消a标签下划线*/
+a{
+	text-decoration: none;
+	color:black;
+}
+#contain{
+    position: relative;
+    max-width: 640px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+#contain:after{
+    content: '';
+    display: block;
+    width: 100%;
+    padding-top: 50%;
+}
+#contain ul{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+#contain li{
+    list-style: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+/* 解决js阻塞页面显示首屏 */
+#contain li:first-child{
+    z-index: 1;
+}
+#contain li img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+#main img{
+	width: 31%;
+}
+
+.demo1{	
+	padding: 10px 0px 10px 15px;
+}
+.demo1>span{
+	font-size: 12px;
+	color: rgb(172,172,172);
+}
+
+.demo1 img{
+	margin: 0 5px 0px 0px;
+	padding: 10px 0px 5px 0px;
+	float: left;
+}
+.demo2{
+	padding: 10px 0px 12px;
+}
+.demo2 img{
+	float: right;
+	padding: 0 15px 0 0;
+
+}
+.demo2 p{
+	height: 97px;
+	width: 210px;
+	padding: 0 0 0 20px;
+	/*margin: 0 0 60px 0px;*/
+}
+.demo2>span{
+	font-size: 12px;
+	color: rgb(172,172,172);
+	padding: 0 0 0 20px;
+}
+
+
+/*
+ * 下拉刷新加载css
+ */
+.dropload-up{
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    font-size: 12px;
+    /* 开启硬件加速 */
+    -webkit-transform:translateZ(0);
+    transform:translateZ(0);
+}
+.dropload-refresh,.dropload-update,.dropload-load,.dropload-noData{
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+.dropload-load .loading{
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    border-radius: 100%;
+    margin: 6px;
+    border: 2px solid #666;
+    border-bottom-color: transparent;
+    vertical-align: middle;
+    -webkit-animation: rotate 0.75s linear infinite;
+    animation: rotate 0.75s linear infinite;
+}
+@-webkit-keyframes rotate {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    50% {
+        -webkit-transform: rotate(180deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
